@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../components/head'); -%>
+</head>
+
+<body>
+    <% if(producto) { %>
+    <form action="/productos/delete" method="POST">
+        <input type="hidden" name="id" value="<%= producto.id %>">
+        <h1>¿Desea eliminar <%= producto.nombre %>?</h1>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="/productos" class="btn btn-warning">Cancelar</a>
+    </form>
+    <% } %>
+</body>
+
+</html>
