@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../../components/head'); -%>
+</head>
+
+<body>
+    <a href="productos/add" class="btn btn-success">Agregar</a>
+    <br>
+    <br>
+    <% if(productos) {%>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% productos.forEach(function(producto){ %>
+            <tr>
+                <td><%= producto.id %></td>
+                <td><%= producto.nombre %></td>
+                <td><%= producto.categoria %></td>
+                <td><%= producto.precio %></td>
+                <td><%= producto.stock %></td>
+                <td>
+                    <a href="productos/update/<%= producto.id %>" class="btn btn-primary">Modificar</a>
+                    <br>
+                    <a href="productos/remove/<%= producto.id %>" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <% } %>
+</body>
+
+</html>
