@@ -33,13 +33,13 @@ router.get('/', function (req, res, next) {
 
 router.get('/add', function (req, res, next) {
     let producto = { "id": 0 };
-    return res.render('pages/productos/create', { title: 'Crear/Editar - Productos', producto: producto });
+    return res.render('pages/productos/create', { title: 'Crear - Productos', producto: producto });
 });
 
 router.get('/update/:id', function (req, res, next) {
     var id = req.params.id;
     let producto = leer(id);
-    return res.render('pages/productos/create', { title: 'Crear/Editar - Productos', producto: producto });
+    return res.render('pages/productos/create', { title: 'Editar - Productos', producto: producto });
 });
 
 router.get('/remove/:id', function (req, res, next) {
