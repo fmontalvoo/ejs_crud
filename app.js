@@ -4,8 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var productosRouter = require('./routes/productos');
+//Configuracion Mongodb
+var nconf = require('nconf');
+nconf.file("config.json");
+
+require('./lib/connect_mongo');
+require('./schemas/productos');
+//------------------------
+
+var index = require('./routes/index');
+var productos = require('./routes/productos');
 
 var app = express();
 
@@ -19,8 +27,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/productos', productosRouter);
+app.use('/', index);
+app.use('/productos', productos);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
