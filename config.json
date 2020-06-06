@@ -1,0 +1,9 @@
+{
+    "http": {
+        "port": 5000
+    },
+    "mongodb": {
+        "ip": "localhost",
+        "database": "test_db"
+    }
+}
