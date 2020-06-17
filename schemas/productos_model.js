@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var ProductosSchema = new mongoose.Schema({
+var ProductoSchema = new mongoose.Schema({
     categoria: {
         type: String,
         unique: false,
@@ -20,5 +20,6 @@ var ProductosSchema = new mongoose.Schema({
         required: true,
     }
 });
-var producto = mongoose.model("producto", ProductosSchema);
-module.exports = producto;
+
+let ProductoModel = mongoose.model("Producto", ProductoSchema);
+module.exports = ProductoModel;

@@ -7,7 +7,7 @@
 
 <body>
     <form action="/productos/create" method="POST">
-        <input type="hidden" name="id" value="<%= producto.id %>">
+        <input type="hidden" name="_id" value="<%= producto._id %>">
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"

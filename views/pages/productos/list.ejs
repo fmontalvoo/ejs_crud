@@ -24,15 +24,15 @@
         <tbody>
             <% productos.forEach(function(producto){ %>
             <tr>
-                <td><%= producto.id %></td>
+                <td><%= producto._id %></td>
                 <td><%= producto.nombre %></td>
                 <td><%= producto.categoria %></td>
                 <td><%= producto.precio %></td>
                 <td><%= producto.stock %></td>
                 <td>
-                    <a href="productos/update/<%= producto.id %>" class="btn btn-primary">Modificar</a>
+                    <a href="productos/update/<%= producto._id %>" class="btn btn-primary">Modificar</a>
                     <br>
-                    <a href="productos/remove/<%= producto.id %>" class="btn btn-danger">Eliminar</a>
+                    <a href="productos/remove/<%= producto._id %>" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
             <% }); %>
