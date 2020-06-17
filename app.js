@@ -9,7 +9,7 @@ var nconf = require('nconf');
 nconf.file("config.json");
 
 require('./lib/connect_mongo');
-require('./schemas/productos');
+require('./schemas/productos_model');
 //------------------------
 
 var index = require('./routes/index');
